@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import Lsh from './components/Lsh.vue' //HelloWorld是个组件
+import Lsh from './components/Lsh.vue' 
 
 export default {
   name: 'App',
