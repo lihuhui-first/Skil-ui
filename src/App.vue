@@ -1,15 +1,13 @@
 <template>
-  <div>hi</div>
-  <Lsh/>
+  <div>导航栏 |<router-link to="/"> Lsh </router-link> |<router-link to="/xxx"> Lsh2 </router-link></div>
+  <hr/>
+ <router-view />
 </template>
 
 <script>
-import Lsh from './components/Lsh.vue' 
+
 
 export default {
-  name: 'App',
-  components: {
-    Lsh //左边是标签名，右边是组件的引用
-  }
+  name: 'App'
 }
 </script>
