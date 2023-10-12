@@ -52,7 +52,11 @@ export default {
     }
     @media (max-width:500px) {
       > .menu{display: none;}
-      > .logo{margin: 0 auto;} //居中
+      > .logo{margin: 0 auto;}
+        @media(max-width: 500px){
+         > .menu{display: none;}
+         > .logo{margin: 0 auto;}
+        } //居中
       > .toggleAside{display: inline-block;}
     }
    }

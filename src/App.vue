@@ -4,13 +4,20 @@
 
 <script lang="ts">
 import { provide, ref } from 'vue'
+import { router } from './router';
 
 
 export default {
   name: 'App',
   setup() {
-    const menuVisible = ref(false) //默认menuVisible是看不见的
-    provide('menuVisible',menuVisible) //标记menuVisible
+    const width = document.documentElement.clientWidth;
+    const menuVisible = ref(width <= 500 ? false : true); //默认menuVisible是看不见的
+    provide('menuVisible', menuVisible) //标记menuVisible
+    router.afterEach(() => { 
+      if (width <= 500) { 
+        menuVisible.value = false
+      }
+    })
   }
 }
 </script>

@@ -19,7 +19,9 @@
             </li>
            </ol>
         </aside>
-        <main>主要内容</main>
+        <main>
+            <router-view />
+        </main>
        </div>
     </div>
 </template>
@@ -31,12 +33,11 @@ export default {
     components: { Topnav },
     setup() {
         const menuVisible = inject<Ref<boolean>>('menuVisible')
-        console.log('Doc aside获取的 menuVisible为: ' + menuVisible?.value)
         return {menuVisible}
      }
-
 }
 </script>
+
 <style lang="scss" scoped>
 aside{
     background: lightblue;
@@ -53,6 +54,12 @@ aside{
         > li{
             padding: 4px 0;
         }
+    }
+    @media(max-width: 500px){
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 70px;
     }
 }
 </style>
