@@ -1,6 +1,7 @@
+import './lib/gulu.scss'
+import './index.scss'
 import { createApp } from 'vue' //创建App实例的重要函数
 import App from './App.vue'
-import './index.scss'
 import { router } from './router'
 
 
