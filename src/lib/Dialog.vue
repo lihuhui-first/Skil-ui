@@ -58,7 +58,7 @@ export default {
       }
     };
     const cancel = () => {
-      context.emit("cancel");
+      props.cancel && props.cancel();
       close();
     };
     return { close, onClickOverlay, ok, cancel };
@@ -74,6 +74,7 @@ $border-color: #d9d9d9;
   box-shadow: 0 0 3px fade-out($color: black, $amount: 0.5);
   min-width: 15em;
   max-width: 90%;
+  // transition: all 0.3s ease;
   &-overlay {
     position: fixed;
     top: 0;
