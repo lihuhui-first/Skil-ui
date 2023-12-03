@@ -1,12 +1,14 @@
 # 安装
 
-打开终端运行以下命令:
+目前本组件库仅提供 npm 及 yarn 安装方式。
+
+## 通过 npm 安装
 
 ```
 npm install Skil-ui
 ```
 
-或
+## 通过 yarn 安装
 
 ```
 yarn add Skil-ui
