@@ -6,6 +6,7 @@ Skil-ui 是一个基于 Vue3 和 TypeScript 的 UI 组件库
 
 因而不建议将此 UI 库应用于生产环境,但如果想一览源代码，那么此 UI 组件库值得一看。
 
-源代码放在了 http://github.com/lihuhui-first/Skil-ui，历史提交信息规范，可按提交顺序逐个查看；也可直接查看每个组件的源代码和示例，运行方法见：README.md。
+源代码放在了 http://github.com/lihuhui-first/Skil-ui
+历史提交信息规范，可按提交顺序逐个查看；也可直接查看每个组件的源代码和示例，运行方法见：README.md。
 
 下一节：[安装](#/doc/install)

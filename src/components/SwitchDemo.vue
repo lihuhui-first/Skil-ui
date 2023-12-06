@@ -5,11 +5,12 @@
       <h2>常规用法</h2>
       <div class="demo-component">
         <Switch1Demo />
+        <component :is="Switch1Demo" />
       </div>
       <div class="demo-actions">
-        <Button>查看代码</Button>
+        <Button @click="codeVisible = !codeVisible">查看代码</Button>
       </div>
-      <div class="demo-code">
+      <div class="demo-code" v-if="codeVisible">
         <pre v-text="Switch1Demo.__sourceCode"></pre>
       </div>
     </div>
@@ -19,9 +20,9 @@
         <Switch2Demo />
       </div>
       <div class="demo-actions">
-        <Button>查看代码</Button>
+        <Button @click="codeVisible = !codeVisible">查看代码</Button>
       </div>
-      <div class="demo-code">
+      <div class="demo-code" v-if="codeVisible">
         <pre v-text="Switch2Demo.__sourceCode"></pre>
       </div>
     </div>
@@ -32,13 +33,14 @@
 import { ref } from "vue";
 import Switch from "../lib/Switch.vue";
 import Button from "../lib/Button.vue";
-import Switch2Demo from "./Switch2.demo.vue";
 import Switch1Demo from "./Switch1.demo.vue";
+import Switch2Demo from "./Switch2.demo.vue";
 export default {
   components: { Switch, Button, Switch1Demo, Switch2Demo },
   setup() {
+    const codeVisible = ref(false);
     const bool = ref(false);
-    return { bool, Switch1Demo, Switch2Demo };
+    return { bool, Switch1Demo, Switch2Demo, codeVisible };
   },
 };
 </script>
