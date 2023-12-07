@@ -19,9 +19,9 @@
         <component :is="Switch2Demo" />
       </div>
       <div class="demo-actions">
-        <Button @click="codeVisible = !codeVisible">查看代码</Button>
+        <Button @click="codeVisible2 = !codeVisible2">查看代码</Button>
       </div>
-      <div class="demo-code" v-if="codeVisible">
+      <div class="demo-code" v-if="codeVisible2">
         <pre v-text="Switch2Demo.__sourceCode"></pre>
       </div>
     </div>
@@ -38,8 +38,9 @@ export default {
   components: { Button },
   setup() {
     const codeVisible = ref(false);
+    const codeVisible2 = ref(false);
     const bool = ref(false);
-    return { bool, Switch1Demo, Switch2Demo, codeVisible };
+    return { bool, Switch1Demo, Switch2Demo, codeVisible, codeVisible2 };
   },
 };
 </script>
