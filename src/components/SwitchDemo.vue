@@ -10,7 +10,16 @@
         <Button @click="codeVisible = !codeVisible">查看代码</Button>
       </div>
       <div class="demo-code" v-if="codeVisible">
-        <pre v-text="Switch1Demo.__sourceCode"></pre>
+        <pre
+          class="language-html"
+          v-html="
+            Prism.highlight(
+              Switch1Demo.__sourceCode,
+              Prism.languages.html,
+              'html'
+            )
+          "
+        />
       </div>
     </div>
     <div class="demo">
@@ -22,7 +31,16 @@
         <Button @click="codeVisible2 = !codeVisible2">查看代码</Button>
       </div>
       <div class="demo-code" v-if="codeVisible2">
-        <pre v-text="Switch2Demo.__sourceCode"></pre>
+        <pre
+          class="language-html"
+          v-html="
+            Prism.highlight(
+              Switch2Demo.__sourceCode,
+              Prism.languages.html,
+              'html'
+            )
+          "
+        />
       </div>
     </div>
   </div>
@@ -34,13 +52,17 @@ import Switch from "../lib/Switch.vue";
 import Button from "../lib/Button.vue";
 import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
+import Prism from "prismjs";
+import "/node_modules/prismjs/themes/prism.css";
+
+console.log("Prism", Prism);
 export default {
   components: { Button },
   setup() {
     const codeVisible = ref(false);
     const codeVisible2 = ref(false);
     const bool = ref(false);
-    return { bool, Switch1Demo, Switch2Demo, codeVisible, codeVisible2 };
+    return { bool, Switch1Demo, Switch2Demo, codeVisible, codeVisible2, Prism };
   },
 };
 </script>
