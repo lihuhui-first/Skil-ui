@@ -5,9 +5,10 @@
       <component :is="component" />
     </div>
     <div class="demo-actions">
-      <Button @click="codeVisible2 = !codeVisible2">查看代码</Button>
+      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="showCode" v-else>查看代码</Button>
     </div>
-    <div class="demo-code" v-if="codeVisible2">
+    <div class="demo-code" v-if="codeVisible">
       <pre
         class="language-html"
         v-html="
@@ -24,14 +25,21 @@ import Button from "../lib/Button.vue";
 import Prism from "prismjs";
 import "/node_modules/prismjs/themes/prism.css";
 export default {
+  components: { Button },
   props: {
     component: Object,
   },
   setup() {
+    const showCode = () => {
+      codeVisible.value = true;
+    };
+    const hideCode = () => {
+      codeVisible.value = false;
+    };
     const codeVisible = ref(false);
     const codeVisible2 = ref(false);
     const bool = ref(false);
-    return { bool, codeVisible, codeVisible2, Prism };
+    return { bool, codeVisible, codeVisible2, Prism, showCode, hideCode };
   },
 };
 </script>
