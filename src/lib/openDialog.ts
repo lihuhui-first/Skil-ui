@@ -15,7 +15,7 @@ export const openDialog = (options) => {
             return h(Dialog,
                 {
                     visible: true,
-                    'onUpdate: visible': (newVisible) => {
+                    'onUpdate:visible': (newVisible) => {
                     if (newVisible === false) { 
                         close();
                       }
