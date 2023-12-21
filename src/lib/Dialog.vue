@@ -2,13 +2,13 @@
   <template v-if="visible">
     <!--遮罩层-->
     <Teleport to="body">
-      <div class="gulu-dialog-overlay" @click="close"></div>
-      <div class="gulu-dialog-wrapper">
+      <div class="Skil-dialog-overlay" @click="close"></div>
+      <div class="Skil-dialog-wrapper">
         <!--本体-->
-        <div class="gulu-dialog">
+        <div class="Skil-dialog">
           <header>
             <slot name="title" />
-            <span @click="close" class="gulu-dialog-close"></span>
+            <span @click="close" class="Skil-dialog-close"></span>
           </header>
           <main>
             <slot name="content" />
@@ -68,7 +68,7 @@ export default {
 <style lang="scss">
 $radius: 4px;
 $border-color: #d9d9d9;
-.gulu-dialog {
+.Skil-dialog {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade-out($color: black, $amount: 0.5);

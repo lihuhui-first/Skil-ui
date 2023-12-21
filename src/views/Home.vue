@@ -123,7 +123,7 @@ $color: #007974;
       background: $green;
       color: white;
       display: inline-block;
-      padding: 8 24px;
+      padding: 8px 24px;
       border-radius: $border-radius;
       &:hover {
         text-decoration: none;

@@ -1,8 +1,8 @@
 <template>
-  <div class="gulu-tabs">
-    <div class="gulu-tabs-nav" ref="container">
+  <div class="Skil-tabs">
+    <div class="Skil-tabs-nav" ref="container">
       <div
-        class="gulu-tabs-nav-item"
+        class="Skil-tabs-nav-item"
         v-for="(t, index) in titles"
         :ref="
           (el) => {
@@ -15,11 +15,11 @@
       >
         {{ t }}
       </div>
-      <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
+      <div class="Skil-tabs-nav-indicator" ref="indicator"></div>
     </div>
-    <div class="gulu-tabs-content">
+    <div class="Skil-tabs-content">
       <component
-        class="gulu-tabs-content-item"
+        class="Skil-tabs-content-item"
         :class="{ selected: c.props?.title === selected }"
         v-for="c in defaults"
         :is="c"
@@ -82,7 +82,7 @@ export default {
 $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
-.gulu-tabs {
+.Skil-tabs {
   &-nav {
     display: flex;
     color: $color;
